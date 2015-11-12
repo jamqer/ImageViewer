@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">"Image Viewer "</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    /*My Custom Strings ENGLISH*/
+    <string name="title_activity_list">Images:</string>
+    <string name="title_activity_image_download">Free image from Pixabay</string>
+    <string name="search_Button">Search</string>
+    <string name="label_textView">Find image on Pixabay.com</string>
+    <string name ="imageView_description">Chosen picture on view</string>
+    <string name ="textView_description">Information about image:</string>
+    <string name ="textView_likes">Likes:</string>
+    <string name ="textView_views">Views</string>
+    <string name ="textView_image_height">Real height:</string>
+    <string name ="textView_image_width">Real width:</string>
+
+
+</resources>

@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jamqer.imagepool.imageviewer.Fragments.SearchFragment"
+    android:id="@+id/SearchFragmentContent">
+
+    <Button
+        android:id="@+id/Btnimages"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_Button"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/tVimages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/label_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/Btnimages"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="70dp" />
+
+    <EditText
+        android:id="@+id/eTimages"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/Btnimages"
+        android:layout_marginBottom="10dp"
+        android:inputType="text" />
+</RelativeLayout>

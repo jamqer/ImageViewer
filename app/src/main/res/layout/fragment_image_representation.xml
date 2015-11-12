@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jamqer.imagepool.imageviewer.Fragments.ImageRepresentationFragment">
+
+
+    <ImageView
+        android:id="@+id/ImageViewMainPicture"
+        android:layout_width="fill_parent"
+        android:layout_height="230dp"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/imageView_description" />
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/textView_description"
+        android:layout_below="@+id/ImageViewMainPicture"
+        />
+    <TextView
+        android:id="@+id/textViewDownloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/textViewDescription"
+
+        />
+    <TextView
+        android:id="@+id/textViewLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/textViewDownloads"
+        />
+    <TextView
+        android:id="@+id/textViewHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/textViewLikes"
+        />
+    <TextView
+        android:id="@+id/textViewWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/textViewHeight"
+        />
+
+
+</RelativeLayout>
