@@ -14,15 +14,22 @@ import android.widget.Toast;
 import com.jamqer.imagepool.imageviewer.R;
 import com.squareup.picasso.Picasso;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ImageRepresentationFragment extends Fragment {
 
     String [] getDataFromBundleArray = new String[5];
-    ImageView imageViewPicture;
-    TextView textViewDownloads, textViewLikes,
-            textViewHeight,textViewWidth;
+
+    @Bind(R.id.ImageViewMainPicture) ImageView imageViewPicture;
+    @Bind(R.id.textViewDownloads) TextView textViewDownloads;
+    @Bind(R.id.textViewLikes) TextView textViewLikes;
+    @Bind(R.id.textViewHeight) TextView textViewHeight;
+    @Bind(R.id.textViewWidth) TextView textViewWidth;
+
 
     public ImageRepresentationFragment() {
         // Required empty public constructor
@@ -34,13 +41,7 @@ public class ImageRepresentationFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View inputFragmentView = inflater.inflate(R.layout.fragment_image_representation, container, false);
-
-        imageViewPicture = (ImageView) inputFragmentView.findViewById(R.id.ImageViewMainPicture);
-
-        textViewDownloads= (TextView) inputFragmentView.findViewById(R.id.textViewDownloads);
-        textViewLikes = (TextView) inputFragmentView.findViewById(R.id.textViewLikes);
-        textViewHeight = (TextView) inputFragmentView.findViewById(R.id.textViewHeight);
-        textViewWidth = (TextView) inputFragmentView.findViewById(R.id.textViewWidth);
+        ButterKnife.bind(this,inputFragmentView);
 
         setResourcesToLayoutObjects();
 

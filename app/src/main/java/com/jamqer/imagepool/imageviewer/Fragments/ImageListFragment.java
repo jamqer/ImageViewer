@@ -20,6 +20,8 @@ import com.jamqer.imagepool.imageviewer.Utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.GsonConverterFactory;
@@ -31,12 +33,14 @@ import retrofit.Retrofit;
  */
 public class ImageListFragment extends Fragment {
 
-    ListView fetchedImagesList;
+
     String StringToQuery;
     Bundle fetchedDataBundle = new Bundle();
     String [] fetchedDataArray = new String[5];
     ImageListAdapter imageListAdapter;
     Fragment fragment = new ImageRepresentationFragment();
+
+    @Bind(R.id.listViewImages) ListView fetchedImagesList;
 
     public ImageListFragment() {
         // Required empty public constructor
@@ -48,13 +52,13 @@ public class ImageListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
          View inputFragmentView = inflater.inflate(R.layout.fragment_image_list, container, false);
-         fetchedImagesList = (ListView) inputFragmentView.findViewById(R.id.listViewImages);
+         ButterKnife.bind(this,inputFragmentView);
 
         fetchDataAndBindToAdapter();
         return inputFragmentView;
     }
 
-    @Nullable
+
     private void fetchDataAndBindToAdapter() {
 
         StringToQuery = getArguments().getString("searchKeyword");
@@ -69,14 +73,14 @@ public class ImageListFragment extends Fragment {
                 .build();
 
         ImageViewerAPI imageViewerAPI = retrofit.create(ImageViewerAPI.class);
-        Map<String, String> IDsMap = new HashMap<String, String>();
-        IDsMap.put("username", "jamqer");
-        IDsMap.put("key", "d87019d529c5bc1487c5");
-        IDsMap.put("q", StringToQuery);
-        IDsMap.put("image_type", "photo");
+        Map<String, String> QueryMapAskForQ = new HashMap<String, String>();
+            QueryMapAskForQ.put("username", "jamqer");
+            QueryMapAskForQ.put("key", "d87019d529c5bc1487c5");
+            QueryMapAskForQ.put("q", StringToQuery);
+            QueryMapAskForQ.put("image_type", "photo");
 
 
-        Call<ImagesResponse> call = imageViewerAPI.getResponse(IDsMap);
+        Call<ImagesResponse> call = imageViewerAPI.getResponse(QueryMapAskForQ);
         call.enqueue(new Callback<ImagesResponse>() {
             @Override
             public void onResponse(final Response<ImagesResponse> response) {

@@ -59,7 +59,7 @@ public class ImageListAdapter extends BaseAdapter {
         TextView textViewSecond = (TextView) view.findViewById(R.id.secondLine);
         ImageView imageView = (ImageView) view.findViewById(R.id.icon);
 
-       // Log.v("ImageViewer", "TextView : " + ListOfImages.get(position));
+
         textViewFirst.setText("Views: " + ListOfImages.get(position).getViews());
         textViewSecond.setText("Likes: " + ListOfImages.get(position).getLikes());
         Picasso.with(context).load(ListOfImages.get(position).getPreviewURL()).resize(80,80).into(imageView);

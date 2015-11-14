@@ -4,6 +4,9 @@ package com.jamqer.imagepool.imageviewer.Fragments;
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +16,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.jamqer.imagepool.imageviewer.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
-/**
- *
- */
+
 public class SearchFragment extends Fragment{
 
     Fragment fragment = new ImageListFragment();
     Bundle sendDataToFragment = new Bundle();
-    Button  BtnSearch;
-    EditText EditTkeyword;
+
+    @Bind(R.id.Btnimages) Button BtnSearch;
+    @Bind(R.id.eTimages) EditText EditTkeyword;
+
 
     public SearchFragment() {
         // Required empty public constructor
@@ -34,8 +39,7 @@ public class SearchFragment extends Fragment{
                              Bundle savedInstanceState) {
 
         View inputFragmentView = inflater.inflate(R.layout.fragment_search, container, false);
-        BtnSearch = (Button) inputFragmentView.findViewById(R.id.Btnimages);
-        EditTkeyword = (EditText) inputFragmentView.findViewById(R.id.eTimages);
+        ButterKnife.bind(this,inputFragmentView);
 
         BtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,9 +66,13 @@ public class SearchFragment extends Fragment{
 
     /**Change Activity on button push with chosen keyword*/
 
+    @SuppressWarnings("ConstantConditions")
     public static void hideSoftKeyboard(Activity activity) {
-        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+            Log.v("IMAGES","Keyboard is hidden");
+
     }
 
 
