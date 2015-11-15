@@ -19,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jamqer.imagepool.imageviewer.Fragments.AboutMeFragment;
 import com.jamqer.imagepool.imageviewer.Fragments.SearchFragment;
 
 import butterknife.Bind;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_search) {
             fragment = new SearchFragment();
         } else if (id == R.id.nav_share) {
-
+            fragment = new AboutMeFragment();
         }
         getFragmentManager()
                 .beginTransaction()

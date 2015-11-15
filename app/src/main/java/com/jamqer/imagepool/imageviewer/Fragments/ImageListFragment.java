@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.jamqer.imagepool.imageviewer.API.ImageViewerAPI;
 import com.jamqer.imagepool.imageviewer.Adapters.ImageListAdapter;
@@ -87,6 +88,11 @@ public class ImageListFragment extends Fragment {
                 try {
                     imageListAdapter = new ImageListAdapter(getActivity(), response.body().getHits());
                     fetchedImagesList.setAdapter(imageListAdapter);
+
+                    if (imageListAdapter.getCount() == 0){
+                        Toast.makeText(getActivity(),"Unfortunately no image was found, please press RETURN key to go back.", Toast.LENGTH_LONG).show();
+                    }
+
                     fetchedImagesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
